@@ -8,10 +8,10 @@ For more information about the Argdown argumentation syntax, visit the [Argdown 
 
 Current features of argdown-cli:
 
-*   export text document to html with `argdown html`
-*   export argument map to pdf, png, svg or dot with `argdown map`
-*   export data to json with `argdown json`
-*   use `argdown` with an `argdown.config.json` file for more complex operations
+* export text document to html with `argdown html`
+* export argument map to pdf, png, svg or dot with `argdown map`
+* export data to json with `argdown json`
+* use `argdown` with an `argdown.config.json` file for more complex operations
 
 ## Installation
 
@@ -35,10 +35,10 @@ npx argdown-cli map -f png --width=2000 --height=2000 --density=300
 
 Available commands:
 
-*   `argdown html [input glob] [output folder]`: exports the input files as html files into the output folder.
-*   `argdown map [input glob] [output folder]`: exports argument maps layouted with Graphviz. By default the maps are saved as pdf files. Use `--format png` to png files, `--format svg` to save svg files and `--format dot` to save dot files. If you export a png image, you can specify its dimensions and dpi density by using `argdown map -f png --width=1000 --height=800 --density=300`. The default density is `72`. Increase the density if the resulting png is of low quality. For more information on the density parameter read [this](https://github.com/lovell/sharp/issues/729).
-*   `argdown json [input glob] [output folder]`: exports the input files as .json files into the output folder.
-*   `argdown compile [input glob] [output folder]`: compiles the input files with included files into new .argdown files.
+* `argdown html [input glob] [output folder]`: exports the input files as html files into the output folder.
+* `argdown map [input glob] [output folder]`: exports argument maps layouted with Graphviz. By default the maps are saved as pdf files. Use `--format svg` to save svg files and `--format dot` to save dot files.
+* `argdown json [input glob] [output folder]`: exports the input files as .json files into the output folder.
+* `argdown compile [input glob] [output folder]`: compiles the input files with included files into new .argdown files.
 
 All commands can be used with the `-w` option: The cli will then watch your .argdown files continuously for changes and export them instantly.
 
@@ -78,6 +78,6 @@ The cli can be configured with a config file. It will automatically look for a `
 
 [Visit the config documentation](https://github.com/christianvoigt/argdown/tree/master/docs/Configuration.md) at the central Argdown repository to learn more about the format of the config file.
 
-## Installation problems under Linux
+## PNG Export
 
-If the installation of argdown-cli fails under Linux this may be caused by the sharp module being unable to build the library needed for the png export. Please take a look at [christianvoigt/argdown#47](https://github.com/christianvoigt/argdown/issues/47) for further information.
+The png export has been removed from argdown-cli after causing installation problems on some operating systems. You can still install it as a plugin in your config file. For details, read the Readme of the [argdown-png-export](https://github.com/christianvoigt/argdown-png-export).
